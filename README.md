@@ -61,6 +61,6 @@ You can adjust the MySQL connection settings in the script:
 
 ## 🧑‍💻 Author
 
-Zainab Ali Taha
-Effat University
-GCS182 Project – Python GUI + MySQL Integration
+- Zainab Ali Taha
+- Effat University
+- GCS182 Project – Python GUI + MySQL Integration
