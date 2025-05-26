@@ -57,7 +57,9 @@ You can adjust the MySQL connection settings in the script:
     database="HotelManagment"
 )`
 
-##🧑‍💻 Author
+---
+
+## 🧑‍💻 Author
 
 Zainab Ali Taha
 Effat University
