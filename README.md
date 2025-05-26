@@ -40,8 +40,6 @@ Uses a MySQL database named `HotelManagment` with the following tables:
 - `room(room_ID, availability)`
 - `food_and_beverage(booking_ID, item_name, quantity, item_price)`
 
-You can modify the schema in `MySQL` Workbench or import from a `.sql` dump (optional).
-
 ---
 
 ## ⚙️ Installation
@@ -51,15 +49,6 @@ You can modify the schema in `MySQL` Workbench or import from a `.sql` dump (opt
 - Tkinter (comes pre-installed)
 - `mysql-connector-python`
 
-Install dependencies:
-pip install mysql-connector-python
-💻 Run the App
-Make sure your MySQL server is running.
-Set up the HotelManagment database and tables.
-Clone this repo and open the main script:
-python hotel_gui.py
-🔐 Configuration
-
 You can adjust the MySQL connection settings in the script:
 `mydb = mysql.connector.connect(
     host="localhost",
@@ -68,8 +57,8 @@ You can adjust the MySQL connection settings in the script:
     database="HotelManagment"
 )`
 
-🧑‍💻 Author
+##🧑‍💻 Author
 
 Zainab Ali Taha
 Effat University
-Course Project – Python GUI + MySQL Integration
+GCS182 Project – Python GUI + MySQL Integration
