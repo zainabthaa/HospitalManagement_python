@@ -57,15 +57,82 @@ def open_room_menu():
 
 # GUI Implementations 
 
+from tkinter import ttk
+
 def show_all_customer():
+    # Create a new top-level window
+    top = tk.Toplevel()
+    top.title("All Customers")
+    top.geometry("700x400")
+
+    # Manually center the window
+    top.update_idletasks()
+    width = top.winfo_width()
+    height = top.winfo_height()
+    x = (top.winfo_screenwidth() // 2) - (width // 2)
+    y = (top.winfo_screenheight() // 2) - (height // 2)
+    top.geometry(f"+{x}+{y}")
+
+    # Create a Treeview widget
+    columns = ("ID", "First Name", "Middle Name", "Last Name", "Address")
+    tree = ttk.Treeview(top, columns=columns, show="headings")
+
+    # Define headings
+    for col in columns:
+        tree.heading(col, text=col)
+        tree.column(col, width=130)
+
+    # Insert customer data
     cursor.execute("SELECT * FROM customer")
-    results = "\n".join(str(row) for row in cursor.fetchall())
-    messagebox.showinfo("All Customers", results or "No records found.")
+    for row in cursor.fetchall():
+        tree.insert("", "end", values=row)
+
+    # Add a scrollbar
+    scrollbar = ttk.Scrollbar(top, orient="vertical", command=tree.yview)
+    tree.configure(yscrollcommand=scrollbar.set)
+
+    # Layout
+    tree.pack(side="left", fill="both", expand=True)
+    scrollbar.pack(side="right", fill="y")
+
+
+from tkinter import ttk
 
 def show_all_employee():
+    # Create a new top-level window
+    top = tk.Toplevel()
+    top.title("All Employees")
+    top.geometry("800x400")
+
+    # Manually center the window
+    top.update_idletasks()
+    width = top.winfo_width()
+    height = top.winfo_height()
+    x = (top.winfo_screenwidth() // 2) - (width // 2)
+    y = (top.winfo_screenheight() // 2) - (height // 2)
+    top.geometry(f"+{x}+{y}")
+
+    # Create a Treeview widget
+    columns = ("ID", "First Name", "Middle Name", "Last Name", "Role", "Shifts")
+    tree = ttk.Treeview(top, columns=columns, show="headings")
+
+    # Define headings
+    for col in columns:
+        tree.heading(col, text=col)
+        tree.column(col, width=120)
+
+    # Insert employee data
     cursor.execute("SELECT * FROM employee")
-    results = "\n".join(str(row) for row in cursor.fetchall())
-    messagebox.showinfo("All Employees", results or "No records found.")
+    for row in cursor.fetchall():
+        tree.insert("", "end", values=row)
+
+    # Add a scrollbar
+    scrollbar = ttk.Scrollbar(top, orient="vertical", command=tree.yview)
+    tree.configure(yscrollcommand=scrollbar.set)
+
+    # Layout
+    tree.pack(side="left", fill="both", expand=True)
+    scrollbar.pack(side="right", fill="y")
 
 def add_customer_gui():
     form_popup("Add Customer", ["Customer ID", "First Name", "Middle Name", "Last Name", "Address"],
