@@ -52,7 +52,6 @@ You can modify the schema in `MySQL` Workbench or import from a `.sql` dump (opt
 - `mysql-connector-python`
 
 Install dependencies:
-```bash
 pip install mysql-connector-python
 💻 Run the App
 Make sure your MySQL server is running.
@@ -62,25 +61,13 @@ python hotel_gui.py
 🔐 Configuration
 
 You can adjust the MySQL connection settings in the script:
-mydb = mysql.connector.connect(
+`mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
     database="HotelManagment"
-)
-📁 Project Structure
+)`
 
-hotel-management/
-│
-├── hotel_gui.py         # Main application file
-├── README.md            # Project documentation
-└── requirements.txt     # Optional: list dependencies
-✨ Future Improvements
-
-Add login/authentication system
-Export reports to PDF or Excel
-Connect to a cloud MySQL instance
-Dark/light theme toggle
 🧑‍💻 Author
 
 Zainab Ali Taha
